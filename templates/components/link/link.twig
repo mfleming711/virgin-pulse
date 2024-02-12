@@ -1,0 +1,18 @@
+<a
+  class="
+    component-link {{class}}
+  "
+  href="{{link.url}}"
+  target="{{link.target|default('_self')}}"
+  {% if link.target == "_blank" %}
+    rel="noopener noreferrer"
+  {% endif %}
+  {{ attribs }}
+>
+  <span class="component-link__label">
+    {{ link.title|default( __('Link', 'pulse_theme') ) }}
+  </span>
+  {% if icon %}
+      {{ source( 'static/img/' ~ icon ~ '.svg', ignore_missing = true) }}
+  {% endif %}
+</a>

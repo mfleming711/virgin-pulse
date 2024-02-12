@@ -1,0 +1,84 @@
+.component-select {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+
+  &__label {
+  }
+
+  &__select {
+  }
+
+  &__control {
+    &,
+    &:hover,
+    &:focus-within {
+    }
+
+    &:focus-visible {
+    }
+
+    &--open {
+    }
+
+    &--open,
+    &--has-value {
+      .component-select {
+      }
+    }
+
+    &:not(&--has-value) .component-select__value {
+    }
+  }
+
+  &__value {
+  }
+
+  &__singleValue,
+  &__multiValue {
+  }
+
+  &__customMultiValue {
+    ~ .customMultiValue {
+    }
+  }
+
+  &__placeholder {
+  }
+
+  &__indicatorsContainer {
+  }
+
+  &__indicatorIcon {
+  }
+
+  &__menu {
+  }
+
+  &__menuList {
+  }
+
+  &__option {
+    &--selected,
+    &:hover,
+    &:focus-within {
+    }
+  }
+
+  &__option__check {
+    svg {
+    }
+
+    &--selected svg {
+    }
+  }
+
+  &__control,
+  &__option,
+  &__placeholder,
+  &__singleValue,
+  &__multiValue,
+  &__dropdownIndicator {
+    cursor: pointer;
+  }
+}

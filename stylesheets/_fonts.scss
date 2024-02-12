@@ -1,0 +1,55 @@
+$font_base: "/wp-content/themes/pulse_theme/static/fonts";
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Black.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Extrabold.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Extrabold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Bold.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Medium.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Regular.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWKEverett";
+  src: url($font_base+"/TWKEverett/TWKEverett-Light.woff2") format("woff2"),
+    url($font_base+"/TWKEverett/TWKEverett-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

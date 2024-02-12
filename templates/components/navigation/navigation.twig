@@ -1,0 +1,152 @@
+<nav
+  x-ref="nav"
+  class="component-navigation {{ class }}"
+  :class="mobileNavOpen && 'component-navigation--open'"
+  @click.outside="currentNav = -1"
+  @mouseleave="onMouseLeave"
+>
+  <div class="container overflow-hidden lg:overflow-visible">
+    <div class="component-navigation__navWrapper">
+      <a href="/" class="component-navigation__logo">
+        {{ source('static/img/logo.svg', ignore_missing = true)}}
+        <span class="sr-only">Homepage</span>
+      </a>
+      <ul ref={ref} class="component-navigation__menuBar">
+        {% for item in globals.main_menu %}
+         {% set has_children = item.items|length %}
+         {% set is_button = has_children or not item.link.url or item.link.url == '#' %}
+         {% set tag = is_button ? 'button' : 'a' %}
+
+          {% if item.link.title %}
+            <li>
+              <{{tag}}
+                class="component-navigation__mainNavItem"
+                :class="currentNav == {{loop.index0}} && 'component-navigation__mainNavItem--active'"
+                @click="toggleSubNav({{loop.index0}})"
+                {% if tag == 'button' %}
+                  @touchend.prevent="toggleSubNav({{loop.index0}})"
+                {% endif %}
+                @mouseenter="if(!isTouch){ currentNav = {{loop.index0}}}"
+                {% if not is_button %}
+                  href="{{item.link.url}}"
+                  target="{{item.link.target}}"
+                {% endif %}
+              >
+                {{item.link.title}}
+                {% if has_children %}
+                  {{ source('static/img/chevron.svg', ignore_missing = true )}}
+                {% endif %}
+              </{{tag}}>
+
+              {% if item.items|length %}
+                <ul
+                  class="component-navigation__subNav"
+                  :class="currentNav == {{loop.index0}} && 'component-navigation__subNav--active'"
+                >
+                  <div class="component-navigation__subNavCopy">
+                    {% if item.headline %}
+                      <span class="type-m-body font-medium line-clamp-2">
+                        {{item.headline}}
+                      </span>
+                    {% endif %}
+                    {% if item.copy %} 
+                    <span class="type-xs-body">{{item.copy}}</span>
+                    {% endif %}
+
+                    {% if item.link.url and item.link.url != '#' %}
+                      {% include 'button/button.twig' with {
+                        link: {
+                          url: item.link.url,
+                          target: item.link.target,
+                          title: __('Overview', 'pulse_theme')
+                        },
+                        variant: 'secondary',
+                      } only %}
+                    {% endif %}
+                  </div>
+
+                  <div
+                    class="
+                      component-navigation__subNavItems
+                      {% if item.items|length > 3 %}
+                        component-navigation__subNavItems--wide
+                      {% endif %}
+                    "
+                  >
+                    {% if item.link.url and item.link.url != '#' %}
+                      <a
+                        href="{{item.link.url}}"
+                        class="
+                          component-navigation__subNavItem
+                          desktopnav:!hidden
+                          {% if item.items[0].icon.url %}
+                          component-navigation__subNavItem--with-icon
+                          {% endif %}
+                        "
+                        target="{{item.link.target}}"
+                      >
+                        {% if item.items[0].icon.url %}
+                          <div class="w-20 h-20 m-auto flex items-center">
+                            {{ source('static/img/arrow.svg', ignore_missing = true) }}
+                          </div>
+                        {% endif %}
+
+                        <span class="type-s-body font-bold line-clamp-2">
+                          {{ __('Overview', 'pulse_theme') }}
+                        </span>
+                      </a>
+                    {% endif %}
+
+                    {% for subitem in item.items %}
+                      {% if subitem.link.url %}
+                        <a 
+                          href="{{subitem.link.url}}"
+                          target="{{subitem.link.target}}"
+                          class="
+                            component-navigation__subNavItem
+                            {% if subitem.icon.url %}
+                              component-navigation__subNavItem--with-icon
+                            {% endif %}
+                          "
+                        >
+                          {% if subitem.icon.url %}
+                            <img
+                              src="{{ subitem.icon.url|resize(60) }}"
+                              alt="{{ subitem.icon.alt }}"
+                            />
+                          {% endif %}
+                          {% if subitem.link.title %}
+                            <span class="type-s-body font-bold line-clamp-2">
+                              {{ subitem.link.title }}
+                            </span>
+                          {% endif %}
+                          {% if subitem.subheadline %}
+                            <span class="type-xs-body line-clamp-2">
+                              {{ subitem.subheadline }}
+                            </span>
+                          {% endif %}
+                          {% if subitem.copy %}
+                            <span class="type-xs-body text-neutral-gray-80 mt-4 mobilenav:hidden">
+                              {{ subitem.copy }}
+                            </span>
+                          {% endif %}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+
+                </ul>
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      {% include 'button/button.twig' with {
+        link: globals.menu_button,
+        variant: 'primary',
+        class: 'component-navigation__button'
+      } only %}
+    </div>
+  </div>
+</nav>

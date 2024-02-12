@@ -1,0 +1,12 @@
+{
+    "require": {
+        "timber/timber": "^1.22.1",
+        "algolia/algoliasearch-client-php": "^3.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "type": "project"
+}

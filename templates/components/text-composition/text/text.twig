@@ -1,0 +1,28 @@
+{% set tagMap = { eyebrow: 'span', headline: 'h2', copy: 'div' } %}
+
+{% set classMap = {
+  eyebrow: 'type-eyebrow',
+  headline: 'type-l-headline component-text-composition__headline',
+  copy: 'type-m-body',
+} %}
+
+{% set tag = as %}
+{% if not as %}
+	{% set tag = tagMap[type] %}
+{% elseif not type  %}
+	{% set tag = 'div' %}
+{% endif %}
+
+{% if text %}
+
+	<{{tag}} class="
+		component-text {% if theme %} theme-{{theme}}{% endif %}
+		{{ class }}
+		{# {% if not ' type-' in class %} #}
+			{{classMap[type]}}
+		{# {% endif %} #}
+	">
+		{{text}}
+	</{{tag}}>
+
+{% endif %}

@@ -1,0 +1,92 @@
+<footer class="component-footer">
+  <div class="component-footer__gridWrapper">
+    <div class="component-footer__contactWrapper">
+      <div class="component-footer__logo">
+        {{ source( 'static/img/logo.svg',  ignore_missing = true) }}
+      </div>
+
+      {% if globals.tagline %}
+        <p>{{globals.tagline}}</p>
+      {% endif %}
+
+      {% if globals.button %}
+        {% include 'button/button.twig' with {
+          link: globals.button
+        } only %}
+      {% endif %}
+
+      {% if globals.social_links|length %}
+        <div>
+          {% for link in globals.social_links %}
+            {% if link.url %}
+              {% include 'icon_link/icon_link.twig' with {
+                theme: 'dark',
+                url: link.url
+              } only %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if globals.columns|length %}
+      <nav class="component-footer__mainNav">
+        {% for column in globals.columns %}
+          <div>
+            <span class="component-footer__columnTitle">{{column.title}}</span>
+            {% if column.links|length %}
+              <ul aria-label="{{column.title}}">
+                {% for link in column.links %}
+                  {% if link.link.url %}
+                    <li>
+                      {% include 'link/link.twig' with {
+                        link: link.link,
+                        class: "columnLink",
+                        theme: 'dark',
+                        underline: false,
+                        icon: link.link.target == '_blank' ? 'external' : false 
+                      } only %}
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+    {% endif %}
+
+    {% if globals.disclaimer %}
+      <div class="component-footer__disclaimer">{{globals.disclaimer}}</div>
+    {% endif %}
+
+    <div class="component-footer__copyrightWrapper">
+      {% if globals.legal_links|length %}
+        <ul>
+          {% for link in globals.legal_links %}
+            {% if link.link.url %}
+              <li>
+                {% include 'link/link.twig' with {
+                  link: link.link,
+                  theme: 'dark',
+                  size: 'xs',
+                  underline: false,
+                  icon: link.link.target == '_blank' ? 'external' : false 
+                } only %}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if globals.copyright %}
+        <span
+          aria-label="copyright"
+          class="type-xs-body"
+        >© Copyright {{ 'now' | date('Y') }} {{globals.copyright}}</span>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% include 'dev-grid/dev-grid.twig' with {} only %}

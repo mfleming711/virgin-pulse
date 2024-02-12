@@ -1,0 +1,30 @@
+  
+{% set domain = fn('parse_url', url)['host']|split('.')|slice(-2,1)[0] %}
+{% set icons = {
+  "twitter": "x",
+  "youtu": "youtube",
+  "linkedin": "linkedin-fill",
+ } %}
+
+ {% set type = {
+  'tel': 'phone',
+  'mailto': 'email',
+}[url|split(':')[0]] %}
+
+<a
+  class="
+    component-icon-link {{class}}
+    theme-{{theme|default('light')}}
+    {% if title %}
+      has--label
+    {% endif %}
+  "
+  href="{{url}}"
+  target="{{target|default('_blank')}}"
+  rel="noopener noreferrer"
+>
+  {{ source( 'static/img/' ~ (icons[domain] ?? domain ?: type) ~ '.svg', ignore_missing = true) }}
+  <span class="component-icon-link__label">
+    {{ title|default( __('Link to', 'pulse_theme') ~ ' ' ~ (type ?? domain) ) }}
+  </span>
+</a>

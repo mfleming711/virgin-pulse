@@ -1,0 +1,16 @@
+.component-video {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  video {
+    @apply block w-full aspect-video;
+    &::-webkit-media-controls-overlay-play-button {
+      // hide center play button on android
+      display: none;
+    }
+  }
+
+  &__play {
+  }
+}

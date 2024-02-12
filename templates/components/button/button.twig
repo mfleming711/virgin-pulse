@@ -1,0 +1,28 @@
+
+{% set is_link = link.url ? true : false %}
+{% set tag = is_link ? 'a' : 'button' %}
+  
+<{{tag}}
+  class="
+    component-button {{class}}
+    variant-{{variant|default('primary')}}
+  "
+  {% if is_link %}
+    href="{{link.url}}"
+    target="{{link.target|default('_self')}}"
+  {% endif %}
+  {% if link.target == "_blank" %}
+    rel="noopener noreferrer"
+  {% endif %}
+  {{ attribs }}
+>
+  {% if link.title %}
+    <span class="component-button__label">
+      {{ link.title }}
+    </span>
+  {% endif }
+  {% if icon %}
+    {{ source( 'static/img/' ~ icon ~ '.svg',  ignore_missing = true) }}
+  {% endif %}
+</{{tag}}>
+

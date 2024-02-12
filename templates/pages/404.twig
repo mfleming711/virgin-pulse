@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    {% include 'post-thumbnail/post-thumbnail.twig' %}
+
+    {% block article_content %}
+      <section class="article-content">
+        <div class="container py-80">
+
+          {% include 'text-composition/text-composition.twig' with {
+            classes: {
+              headline: 'layout-floating-text-with-image-1-1__headline',
+              copy: 'type-s-body md:type-m-body',
+              ctaWrapper: 'flex-wrap',
+            },
+            eyebrow: eyebrow,
+            headline: "404 " ~ __('Page not found.', 'pulse_theme'),
+            copy: __('Sorry, we can’t find that page! You can go back to the Homepage or take a look at our solutions.', 'pulse_theme'),
+            buttons: [
+              {
+                link: {
+                  title: __('Homepage', 'pulse_theme'),
+                  url: '/'
+                },
+                variant: 'secondary'
+              },
+              { 
+                link: { 
+                  title: __('Solutions', 'pulse_theme'),
+                  url: Post(globals.solutions_page).link
+                },
+                variant: 'secondary'
+              },
+            ],
+          } only %}
+        </div>
+      </section>
+    {% endblock %}
+  </article>
+{% endblock %}

@@ -1,0 +1,304 @@
+# Copyright (C) 2024 pulse_theme
+# This file is distributed under the same license as the pulse_theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: pulse_theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Econdig: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: undefined\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/posttypes/office_locations.php:4
+msgctxt "Post Type General Name"
+msgid "Offices"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:5
+msgctxt "Post Type Singular Name"
+msgid "Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:6
+msgid "Offices"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:7, inc/posttypes/office_locations.php:34
+msgid "Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:8
+msgid "Office Archives"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:9
+msgid "Office Attributes"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:10
+msgid "Parent Office:"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:11
+msgid "All Offices"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:12
+msgid "Add New Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:13
+msgid "Add New"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:14
+msgid "New Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:15
+msgid "Edit Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:16
+msgid "Update Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:17
+msgid "View Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:18
+msgid "View Offices"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:19
+msgid "Search Office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:20
+msgid "Not found"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:21
+msgid "Not found in Trash"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:22
+msgid "Office Image"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:23
+msgid "Set office image"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:24
+msgid "Remove office image"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:25
+msgid "Use as office image"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:26
+msgid "Insert into office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:27
+msgid "Uploaded to this office"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:28
+msgid "Offices list"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:29
+msgid "Offices list navigation"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:30
+msgid "Filter Offices list"
+msgstr ""
+
+#: inc/posttypes/office_locations.php:35
+msgid "Offices Description"
+msgstr ""
+
+#: templates/cache/base.php:14
+msgid "No content"
+msgstr ""
+
+#: templates/cache/pages/404.php:18
+msgid "Page not found."
+msgstr ""
+
+#: templates/cache/pages/404.php:19
+msgid "Sorry, we can’t find that page! You can go back to the Homepage or take a look at our solutions."
+msgstr ""
+
+#: templates/cache/pages/404.php:23
+msgid "Homepage"
+msgstr ""
+
+#: templates/cache/pages/404.php:30, templates/cache/components/algolia-search/algolia-search.php:33
+msgid "Solutions"
+msgstr ""
+
+#: templates/cache/pages/archive.php:53, templates/cache/components/algolia-search/algolia-search.php:81
+msgid "Sorry, no matches were found."
+msgstr ""
+
+#: templates/cache/pages/search.php:8
+msgid "Search Results"
+msgstr ""
+
+#: templates/cache/pages/search.php:22
+msgid "Suggested searches"
+msgstr ""
+
+#: templates/cache/pages/search.php:44
+msgid "Popular links"
+msgstr ""
+
+#: templates/cache/pages/single-post.php:19
+msgid "Related insights"
+msgstr ""
+
+#: templates/cache/pages/single-post.php:20
+msgid "Learn how to leverage retail IoT for your business"
+msgstr ""
+
+#: templates/layouts/floating-text-with-image-1-1/floating-text-with-image-1-1.php:13, templates/cache/components/hero/hero.php:52, templates/cache/layouts/text-with-image-3-2/text-with-image-3-2.php:49
+msgid "Watch Video"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:24, templates/cache/components/header/header.php:29, templates/cache/components/header/header.php:57, templates/cache/components/header/header.php:62, templates/cache/components/navigation/navigation.php:161
+msgid "Search"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:32
+msgid "All results"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:34
+msgid "Insights"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:35
+msgid "Positive Commerce"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:56
+msgid "No results found"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:63, templates/cache/components/algolia-search/algolia-search.php:65
+msgid "Relevant first"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:64, templates/cache/components/filter-bar/filter-bar.php:126
+msgid "Newest first"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:84
+msgid "Try a new search or use our suggestions below."
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:99, templates/cache/components/pagination/pagination.php:25
+msgid "Previous"
+msgstr ""
+
+#: templates/cache/components/algolia-search/algolia-search.php:142, templates/cache/components/pagination/pagination.php:69
+msgid "Next"
+msgstr ""
+
+#: templates/cache/components/article-header/article-header.php:1, templates/cache/components/teaser/teaser-post.php:27
+msgid "Article"
+msgstr ""
+
+#: templates/cache/components/article-header/article-header.php:1, templates/cache/components/teaser/teaser-post.php:46
+msgid "min read"
+msgstr ""
+
+#: templates/cache/components/article-header/article-header.php:22
+msgid "Back to insights"
+msgstr ""
+
+#: templates/cache/components/button/button.php:38, templates/cache/components/link/link.php:26
+msgid "Link"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:6
+msgid "View by: "
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:10, templates/cache/components/filter-bar/filter-bar.php:11
+msgid "Type"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:28, templates/cache/components/filter-bar/filter-bar.php:29
+msgid "Solution"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:46, templates/cache/components/filter-bar/filter-bar.php:47
+msgid "Industry"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:64, templates/cache/components/filter-bar/filter-bar.php:65
+msgid "Role"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:82, templates/cache/components/filter-bar/filter-bar.php:83
+msgid "Technology"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:106
+msgid "Filters selected:"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:118
+msgid "Clear results"
+msgstr ""
+
+#: templates/cache/components/filter-bar/filter-bar.php:126
+msgid "Oldest first"
+msgstr ""
+
+#: templates/cache/components/icon_link/icon_link.php:28
+msgid "Link to"
+msgstr ""
+
+#: templates/cache/components/navigation/navigation.php:61, templates/cache/components/navigation/navigation.php:95
+msgid "Overview"
+msgstr ""
+
+#: templates/cache/components/navigation/navigation.php:153, templates/cache/components/navigation/navigation.php:156
+msgid "Search here"
+msgstr ""
+
+#: templates/cache/components/search-result/search-result.php:11
+msgid "Read more"
+msgstr ""
+
+#: templates/cache/components/teaser/teaser-post.php:23
+msgid "Featured"
+msgstr ""
+
+#: templates/cache/layouts/local-office/local-office.php:40
+msgid "Find your local office"
+msgstr ""
+
+#: templates/cache/layouts/local-office/local-office_office.php:27
+msgid "Get Directions"
+msgstr ""
+
+#: templates/cache/layouts/office-map/office-map.php:2
+msgid "View on Google Maps"
+msgstr ""

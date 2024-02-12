@@ -1,0 +1,8 @@
+.component-text-composition {
+  @apply flex flex-col gap-20;
+
+  &__headline {
+    @apply hyphens-auto;
+    text-wrap: balance;
+  }
+}

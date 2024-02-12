@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <article x-data="article" class="post-type-{{ post.post_type }} article-root" id="post-{{ post.ID }}" x-ref="single-post-article">
+    {% include ['article-header/article-header.twig'] with { post, globals, language_code } only %}
+
+    {% block article_content %}
+      <section class="article-content">
+      {{ post.content }}
+      </section>
+    {% endblock %}
+
+    {% include ['article-footer/article-footer.twig'] with { post, globals } only %}
+  </article>
+{% endblock %}

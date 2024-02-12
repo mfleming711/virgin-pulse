@@ -1,0 +1,71 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container pt-60 pb-20 md:py-120 md:pb-100">
+		<div class="md:default-grid">
+			<div class="col-start-3 col-span-8">
+				<h1 class="type-xl-headline mb-40">
+					{{ __('Search Results', 'pulse_theme') }}
+				</h1>
+
+				{% include 'algolia-search/algolia-search.twig' with { globals: globals} only %}
+			</div> 
+
+
+			<div class="col-span-full">
+				{% include 'divider/divider.twig' %}
+			</div>
+
+			{% if globals.searches_suggested|length %}
+				<div class="col-span-7">
+					<h3 class="type-eyebrow text-neutral-gray-80 mb-32">
+						{{__('Suggested searches', 'pulse_theme') }}
+					</h3>
+
+					<div class="flex flex-col gap-16 md:gap-30">
+						{% for suggestion in globals.searches_suggested %}
+							{% include 'link/link.twig' with {
+								link: { title: suggestion.search, url: '/' ~ fn('apply_filters', 'wpml_current_language', NULL) ~ '/?s=' ~ suggestion.search},
+								icon: 'arrow'
+							} only %}
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+
+			<div class="hidden md:block col-start-9 col-span-1 border-l border-neutral-gray-60 -my-16"></div>
+
+			{% if globals.search_links|length %}
+				<div class="col-start-10 col-span-3">
+					<div class="block md:hidden">
+						{% include 'divider/divider.twig' %}
+					</div>
+					<h3 class="type-eyebrow text-neutral-gray-80 mb-32">
+						{{__('Popular links', 'pulse_theme') }}
+					</h3>
+
+					<div class="flex flex-col gap-16 md:gap-30">
+						{% for link in globals.search_links %}
+							{% include 'link/link.twig' with {
+								link: link.link,
+							} only %}
+						{% endfor %}
+						</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+	{% include 'layouts/text-with-image-3-2/text-with-image-3-2.twig' with globals.search_cta_banner|merge({
+		variant: 'card',
+		button: {
+			link: globals.search_cta_banner.button,
+			variant: 'secondary',
+			icon: 'arrow',
+		}
+	}) only %}
+
+	<div class="container">
+		<div class="border-b border-neutral-gray-80 -mt-[1px]"></div>
+	</div>
+{% endblock %}

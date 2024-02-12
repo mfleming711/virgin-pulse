@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    {% include 'post-thumbnail/post-thumbnail.twig' %}
+
+    {% block article_content %}
+      <section class="article-content">
+        <div class="container">
+          {{ post.content }}
+        </div>
+      </section>
+    {% endblock %}
+  </article>
+{% endblock %}

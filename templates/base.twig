@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+  {% include 'html-header.twig' %}
+
+  <body class="{{ body_class }}">
+    {% include ['header/header.twig'] %}
+
+    {% block content %}
+      {{ __('No content', 'pulse_theme') }}
+    {% endblock %}
+
+    {% block footer %}
+      {% include ['footer/footer.twig'] %}
+      {{ function('wp_footer') }}
+    {% endblock %}
+  </body>
+</html>

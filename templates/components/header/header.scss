@@ -1,0 +1,11 @@
+.component-header {
+  body.admin-bar & {
+    top: 3.2rem;
+  }
+
+  body.header--unpinned & {
+    @screen desktopnav {
+      transform: translateY(-100%);
+    }
+  }
+}

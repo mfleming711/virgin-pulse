@@ -1,0 +1,24 @@
+{% if post.thumbnail %}
+  <div class="component-post-thumbnail">
+    {# prettier-ignore-start #}
+    <img
+      src="{{ post.thumbnail|resize(1280, 640) }}"
+      srcset="
+          {{ post.thumbnail|resize(1280, 640) }} 1280w,
+          {{ post.thumbnail|resize(1080, 360) }} 1080w,
+          {{ post.thumbnail|resize(720, 240) }} 720w
+        "
+      sizes="100%"
+    alt="{{ post.thumbnail.alt }}"/>
+    {# prettier-ignore-end #}
+    <h1 class="article-h1">
+      {{ post.title }}
+    </h1>
+  </div>
+{% else %}
+  <div class="container">
+  <h1 class="article-h1">
+      {{ post.title }}
+    </h1>
+  </div>
+{% endif %}

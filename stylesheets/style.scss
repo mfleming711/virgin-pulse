@@ -1,0 +1,69 @@
+/*!
+Theme Name: Virgin Pulse Theme
+Theme URI: /
+Author: Base
+Author URI: /
+Description: Virgin Pulse Theme Code
+Version: 0.0.1
+Text Domain: pulse_theme
+*/
+
+@import "normalize";
+@import "fonts";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  // TODO: adjust scroll padding
+  // scroll-padding-top: 15rem;
+
+  > article {
+    flex-grow: 1;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  // @apply type-m-body text-primary tracking-normal;
+}
+
+// https://alpinejs.dev/directives/cloak
+[x-cloak] {
+  display: none !important;
+}
+
+/* clears the x from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the x from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+@import "./tools.scss";
+@import "../templates/components/**/*.scss";
+@import "../templates/blocks/**/*.scss";
+@import "../templates/layouts/**/*.scss";
+@import "../templates/pages/scss/*.scss";

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "whatwedo.twig",
+    "adrianwilczynski.alpine-js-intellisense",
+    "esbenp.prettier-vscode",
+    "rexshi.phpdoc-comment-vscode-plugin",
+    "adamwalzer.scss-lint",
+    "bradlc.vscode-tailwindcss"
+  ],
+}

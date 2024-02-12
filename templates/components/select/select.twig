@@ -1,0 +1,76 @@
+<label
+  x-data="selectComponent({
+    isMulti: {{is_multi ? 'true' : 'false' }},
+    placeholder: `{{placeholder}}`,
+  })"
+  class="component-select {% if theme %}theme-{{theme}}{% endif %} {{ class }}"
+  @click.outside="open = false"
+  @keyup.escape="open = false"
+>
+  {% if label %}
+    <span class="component-select__label">{{label}}</span> 
+  {% endif %}
+
+  <button
+    aria-hidden
+    type="button"
+    class="component-select__control"
+    :class="{
+      'component-select__control--open': open,
+      'component-select__control--has-value': hasValue,
+    }"
+    @click="toggleSelect"
+  >
+    <span
+      class="component-select__value" 
+      x-html="currentLabel || `{{ placeholder }}`"
+    >
+      {{ placeholder }}
+    </span>
+    <span class="component-select__indicatorsContainer">
+      <span class="component-select__indicatorIcon" :class="open && 'rotate-180'">
+      {{ source('static/img/chevron.svg', ignore_missing = true) }}
+      </span>
+    </span>
+  </button>
+
+  <div class="component-select__menu" x-cloak x-show="open">
+    <ul class="component-select__menuList">
+      <template x-for="option in options">
+          <li
+            class="component-select__option"
+            :class="isSelected(option.value) && 'component-select__option--selected'"
+          >
+            <button
+              type="button"
+              @click="setValue(option.value)"
+            >
+              {% if is_multi  %}
+                <span
+                  class="component-select__option__check"
+                  :class="isSelected(option.value) && 'component-select__option__check--selected'"
+                >
+                  {{ source('static/img/simpleCheckmark.svg', ignore_missing = true) }}
+                  <Checkmark />
+                </span>
+              {% endif %}
+              <span x-text="option.label"></span>
+            </button>
+          </li>
+      </template>
+    </ul>
+  </div>
+
+
+  {# keep a real select visually hidden, to mirror state for a11y and easier access to the value from outside this component #}
+  <select
+    class="sr-only"
+    x-ref="select"
+    x-model="value"
+    {% if is_multi %} multiple {% endif %}
+    {% if name %} name="{{name}}" {% endif %}
+  >
+    {% block options %}
+    {% endblock %}
+  </select>
+</label>

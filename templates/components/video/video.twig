@@ -1,0 +1,55 @@
+{% set tag = autoplay ? 'span' : 'button' %}
+<{{tag}}
+  class="component-video {% if theme %}theme-{{theme}}{% endif %}  {{ class }}"
+  {% if not autoplay %} 
+    x-data="videoComponent"
+    {% if not controls %}
+    @click="togglePlay"
+    {% endif %}
+    aria-label="play video"
+  {% endif %} 
+>
+  <video
+    x-ref="video"
+    class="
+      object-cover cursor-pointer
+      {% if not controls %}
+        pointer-events-none
+      {% endif %}
+    "
+    @playing="playing = true"
+    @pause="playing = false"
+    playsInline
+    {% if controls %}
+      controls
+    {% endif %}
+    {% if autoplay %}
+      autoPlay
+      loop
+    {% endif %}
+    {% if poster %}
+    poster="{{poster}}"
+    {% endif %}
+    {% if muted %}
+      muted
+    {% endif %}
+    {# fix poster on iOS: #}
+    {# https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/ #}
+    src="{{video}}{% if not poster %}#t=0.001{% endif %}"
+  ></video>
+  {% if not autoplay %}
+    <div x-show="!playing" class="component-video__play">
+      {{ source('static/img/play.svg', ignore_missing = true) }}
+    </div>
+  {% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      {% if poster %}
+      "thumbnailUrl": ["{{poster}}"],
+      {% endif %}
+      "contentUrl": "{{video}}"
+    }
+  </script>
+</{{tag}}>

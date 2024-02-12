@@ -1,0 +1,12 @@
+vendor/
+node_modules/
+bower_components/
+dist/*
+.DS_Store
+.idea
+/**/*.iml
+templates/cache
+style.css
+static/js/theme.min.js
+admin.css
+yarn-error.log
