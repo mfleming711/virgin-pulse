@@ -1,0 +1,9 @@
+<div
+  x-data="responsiveMediaItemComponent"
+  class="component-responsive-media-item {{ class }}"
+>
+  {% include 'media-item/media-item.twig' with mobile|merge({class: 'lg:hidden lg:last:block'}) only %}
+  {% if desktop.media_item.image.url or desktop.media_item.video.url %}
+    {% include 'media-item/media-item.twig' with desktop|merge({class: 'hidden lg:block'}) only %}
+  {% endif %}
+</div>

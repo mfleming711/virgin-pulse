@@ -1,32 +1,32 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-	<div class="overflow-hidden">
-		<div class="container py-60 md:py-120">
-			<div class="md:default-grid">
-			{% set page = Post(fn('get_option', 'page_for_posts')) %}
+  <div class="overflow-hidden">
+    <div class="container py-60 md:py-120">
+      <div class="md:default-grid">
+        {% set page = Post(fn('get_option', 'page_for_posts')) %}
 
-			<div class="default-grid gap-y-30">
-				{% for post in posts %}
-					{% if post.link %}
-						{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser/teaser.twig'] with { class: 'col-span-6 lg:col-span-4', post: post } only %}
-					{% endif %}
-				{% endfor %}
+        <div class="default-grid gap-y-30">
+          {% for post in posts %}
+            {% if post.link %}
+              {% include [
+                'teaser/teaser-' ~ post.post_type ~ '.twig',
+                'teaser/teaser.twig'
+              ] with {
+                class: 'col-span-6 lg:col-span-4',
+                post: post
+              } only %}
+            {% endif %}
+          {% endfor %}
 
-				{% if posts|length <= 1 %}
-					<div class="col-span-full p-40 md:px-160 bg-white rounded-15 type-l-body text-center">
-						{{ __('Sorry, no matches were found.', 'pulse_theme') }}
-					</div>
-				{% endif %}
-			</div>
-
-			{# {% if posts|length > 1 %}
-				{% include 'pagination/pagination.twig' with {
-					class: 'mt-60'
-				} %}
-			{% endif %} #}
-		</div>
-		{{ post.content }}
-	</div>
-
+          {% if (posts|length) <= 1 %}
+            <div class="col-span-full p-40 md:px-160 bg-white rounded-15 type-l-body text-center">
+              {{ __('Sorry, no matches were found.', 'pulse_theme') }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {{ post.content }}
+  </div>
 {% endblock %}

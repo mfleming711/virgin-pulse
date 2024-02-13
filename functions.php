@@ -1,9 +1,8 @@
 <?php
 
 require_once __DIR__ . "/vendor/autoload.php";
-require_once __DIR__ . '/inc/algolia/algolia.php';
 
-$timber = new \Timber\Timber();
+Timber\Timber::init();
 Timber::$dirname = ["templates", "templates/pages", "templates/components"];
 
 require_once __DIR__ . "/inc/BaseSite.php";
@@ -89,7 +88,7 @@ class PulseSite extends Base\Site
 
   public function register_post_types()
   {
-    include_once('inc/posttypes/office_locations.php');
+    // include_once('inc/posttypes/cpt.php');
   }
 
   public function register_taxonomies()

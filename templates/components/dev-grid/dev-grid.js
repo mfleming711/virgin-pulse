@@ -1,9 +1,9 @@
 window.devGridComponent = () => {
   return {
-    showGrid: false,
+    showGrid: true,
 
     init() {
-      const onKey = event => {
+      const onKey = (event) => {
         if (!(event.ctrlKey && event.key === 'g')) return;
         this.showGrid = !this.showGrid;
       };

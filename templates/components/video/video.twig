@@ -1,6 +1,6 @@
 {% set tag = autoplay ? 'span' : 'button' %}
 <{{tag}}
-  class="component-video {% if theme %}theme-{{theme}}{% endif %}  {{ class }}"
+  class="component-video {{ class }}"
   {% if not autoplay %} 
     x-data="videoComponent"
     {% if not controls %}
@@ -26,11 +26,12 @@
     {% if autoplay %}
       autoPlay
       loop
+      muted
     {% endif %}
     {% if poster %}
     poster="{{poster}}"
     {% endif %}
-    {% if muted %}
+    {% if muted and not autoplay %}
       muted
     {% endif %}
     {# fix poster on iOS: #}

@@ -1,4 +1,0 @@
-@function grid($col, $gap: 3rem, $base: 12) {
-  @return calc((100% - ($base - 1) * $gap) / $base * $col + ($col - 1) * $gap);
-}
-

@@ -40,7 +40,7 @@ function buildJS() {
     .pipe(
       webpack(
         {
-          mode: 'development',
+          mode: 'production',
           ...sharedWebpackConfig,
         },
         compiler

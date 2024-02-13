@@ -16,18 +16,18 @@ class Block
       return;
     }
     $title = $title ?: $name;
-    $supports = ['align' => true, 'anchor' => true];
+    $supports = ['align' => false, 'anchor' => true];
     if ($mode == 'nested') {
       $mode = 'preview';
       $supports = [
-        'align' => true,
+        'align' => false,
         'mode' => false,
         'jsx' => true,
       ];
     }
     acf_register_block_type([
       'name' => $name,
-      'title' => __($title, 'your-text-domain'),
+      'title' => __($title, 'pulse_theme'),
       'render_callback' => ['Base\Block', 'render'],
       'category' => 'formatting',
       'icon' => $icon,
@@ -44,7 +44,7 @@ class Block
     $post_id = 0
   ) {
     $context = \Timber::get_context();
-    $context['post'] = new \Timber\Post($post_id);
+    $context['post'] = Timber::get_post($post_id);
     $context['block'] = $block;
     $context['fields'] = get_fields();
     $context['is_preview'] = $is_preview;

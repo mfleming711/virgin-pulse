@@ -1,46 +1,60 @@
-{% set eyebrowProps = eyebrow is iterable ? eyebrow : {text:eyebrow} %}
-{% set headlineProps = headline is iterable ? headline : {text:headline}  %}
-{% set copyProps = copy is iterable ? copy : {text:copy} %}
+{% set eyebrowProps = eyebrow is iterable
+  ? eyebrow
+  : {
+    text: eyebrow
+  }
+%}
+{% set headlineProps = headline is iterable
+  ? headline
+  : {
+    text: headline
+  }
+%}
+{% set copyProps = copy is iterable
+  ? copy
+  : {
+    text: copy
+  }
+%}
 
 {% set hasLinks = links is iterable %}
 {% set hasButtons = buttons is iterable %}
 {% set hasCTA = hasLinks or hasButtons %}
 
+<div class="component-text-composition {{ classes.root }}">
+  {% if eyebrowProps.text %}
+    {% include 'text-composition/text/text.twig' with {
+      type: 'eyebrow',
+      class: [eyebrowProps.class, classes.eyebrow]|join(' ')
+    }|merge(eyebrowProps) only %}
+  {% endif %}
 
-<div class="component-text-composition {{classes.root}}">
-	{% if eyebrowProps.text %}
-		{% include 'text-composition/text/text.twig' with {
-          type: 'eyebrow',
-          class: [eyebrowProps.class, classes.eyebrow]|join(' '),
-        }|merge(eyebrowProps) only %}
-	{% endif %}
+  {% if headlineProps.text %}
+    {% include 'text-composition/text/text.twig' with {
+      type: 'headline',
+      class: [headlineProps.class, classes.headline]|join(' ')
+    }|merge(headlineProps) only %}
+  {% endif %}
 
-	{% if headlineProps.text %}
-		{% include 'text-composition/text/text.twig' with {
-          type: 'headline',
-          class: [headlineProps.class, classes.headline]|join(' '),
-        }|merge(headlineProps) only %}
-	{% endif %}
+  {% if copyProps.text %}
+    {% include 'text-composition/text/text.twig' with {
+      type: 'copy',
+      class: [copyProps.class, classes.copy]|join(' ')
+    }|merge(copyProps) only %}
+  {% endif %}
 
-	{% if copyProps.text %}
-		{% include 'text-composition/text/text.twig' with {
-          type: 'copy',
-          class: [copyProps.class, classes.copy]|join(' '),
-        }|merge(copyProps) only %}
-	{% endif %}
-
-	{% if hasCTA %}
-		<div class="{{ ['flex gap-20 ', classes.ctaWrapper]|join(' ') }}">
-			{% for button in buttons %}
-				{% if button.link.url is defined and button.link.url is not empty %}
-						{% include 'button/button.twig' with button only %}
-		  		{% endif %}
-			{% endfor %}
-			{% for link in links %}
-				{% if link.link.url is defined and link.link.url is not empty %}
-					{% include 'link/link.twig' with link only %}
-				{% endif %}
-			{% endfor %}
-		</div>
-	{% endif %}
+  {% if hasCTA %}
+    <div class="{{ ['flex gap-20 ', classes.ctaWrapper]|join(' ') }}">
+      {% for button in buttons %}
+        {% if button.link.url is defined and button.link.url is not empty %}
+          {% include 'button/button.twig' with button only %}
+        {% endif %}
+      {% endfor %}
+      {% for link in links %}
+        {% if link.link.url is defined and link.link.url is not empty %}
+          {% include 'link/link.twig' with link only %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>

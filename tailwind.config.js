@@ -42,7 +42,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    function ({ addComponents }) {
+    function({ addComponents }) {
       addComponents({
         '.default-grid': {
           display: 'grid',
@@ -66,7 +66,7 @@ module.exports = {
             maxWidth: '124rem',
           },
         },
-        // TODO: add colors
+        // TODO: add typography
         // '.type-xl-headline': {
         //   fontFamily: 'TWKEverett',
         //   fontWeight: '500',

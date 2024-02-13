@@ -1,29 +1,31 @@
-<header
-  x-data="headerComponent"
+<header x-data="headerComponent"
   x-ref="root"
-  class="component-header site-header"
->
-  {#
-  <div class="component-header__headerBar container">
-    <a href="/{{ fn('apply_filters', 'wpml_current_language', null) }}" class="component-header__logo">
-      {{ source('static/img/logo.svg', ignore_missing = true)}}
-      <span class="sr-only">Home</span>
-    </a>
+  class="component-header site-header">
+  <div class="container">
+    Header
 
-    <button
-      class="component-header__burger"
-      :class="mobileNavOpen && 'component-header__burger--open'"
-      @click="toggleMobileNav"
-      type="button"
-    >
-      {{ source('static/img/burger.svg', ignore_missing = true ) }}
-      <span class="sr-only">Toggle Menu</span>
-    </button>
+    {#
+    <div class="component-header__headerBar container">
+      <a href="/{{ fn('apply_filters', 'wpml_current_language', null) }}" class="component-header__logo">
+        {{ source('static/img/logo.svg', ignore_missing = true)}}
+        <span class="sr-only">Home</span>
+      </a>
+
+      <button
+        class="component-header__burger"
+        :class="mobileNavOpen && 'component-header__burger--open'"
+        @click="toggleMobileNav"
+        type="button"
+      >
+        {{ source('static/img/burger.svg', ignore_missing = true ) }}
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    #}
+
+    {% include 'navigation/navigation.twig' with {
+      globals: globals,
+      class: 'component-header__navigation'
+    } only %}
   </div>
-  #}
-
-  {% include 'navigation/navigation.twig' with {
-    globals: globals,
-    class: 'component-header__navigation'
-  } only %}
 </header>

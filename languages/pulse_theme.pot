@@ -1,0 +1,52 @@
+# Copyright (C) 2024 pulse_theme
+# This file is distributed under the same license as the pulse_theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: pulse_theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-13 13:02+0000\n"
+"Project-Id-Version: undefined\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/cache/base.php:9
+msgid "No content"
+msgstr ""
+
+#: templates/cache/pages/404.php:17
+msgid "Page not found."
+msgstr ""
+
+#: templates/cache/pages/404.php:18
+msgid "Sorry, we can’t find that page! You can go back to the Homepage or take a look at our solutions."
+msgstr ""
+
+#: templates/cache/pages/404.php:25
+msgid "Homepage"
+msgstr ""
+
+#: templates/cache/pages/404.php:32
+msgid "Solutions"
+msgstr ""
+
+#: templates/cache/pages/archive.php:24
+msgid "Sorry, no matches were found."
+msgstr ""
+
+#: templates/cache/components/icon_link/icon_link.php:28
+msgid "Link to"
+msgstr ""
+
+#: templates/cache/components/link/link.php:13
+msgid "Link"
+msgstr ""
+
+#: templates/cache/components/navigation/navigation.php:61, templates/cache/components/navigation/navigation.php:95
+msgid "Overview"
+msgstr ""

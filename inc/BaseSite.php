@@ -10,7 +10,7 @@ if (!class_exists('\Timber')) {
   return;
 }
 
-class Site extends \TimberSite
+class Site extends \Timber\Site
 {
   function __construct()
   {
@@ -35,21 +35,21 @@ class Site extends \TimberSite
 
   function bs_add_to_twig($twig)
   {
-    $twig->addExtension(new \Twig_Extension_StringLoader());
-    $twig->addFunction(new \Twig_Function(
+    // $twig->addExtension(new \Twig_Extension_StringLoader());
+    $twig->addFunction(new \Twig\TwigFunction(
       'print', [$this, 'bs_debug_print'], ['needs_context' => true]
     ));
-    $twig->addFunction(new \Twig_Function(
+    $twig->addFunction(new \Twig\TwigFunction(
       'render_layouts', [$this, 'bs_render_layouts']
     ));
     $twig->addFilter(
-      new \Twig_SimpleFilter('obfuscate', [$this, 'bs_obfuscate'])
+      new \Twig\TwigFilter('obfuscate', [$this, 'bs_obfuscate'])
     );
     $twig->addFilter(
-      new \Twig_SimpleFilter('file_size', [$this, 'bs_attachement_file_size'])
+      new \Twig\TwigFilter('file_size', [$this, 'bs_attachement_file_size'])
     );
     $twig->addFilter(
-      new \Twig_SimpleFilter('file_type', [$this, 'bs_attachement_file_type'])
+      new \Twig\TwigFilter('file_type', [$this, 'bs_attachement_file_type'])
     );
     return $twig;
   }
@@ -95,14 +95,14 @@ class Site extends \TimberSite
 
   function bs_add_mime_types($mimes)
   {
-    $mimes['svg'] = 'image/svg+xml';
-    $mimes['vcf'] = 'text/x-vcard';
+    // $mimes['svg'] = 'image/svg+xml';
+    // $mimes['vcf'] = 'text/x-vcard';
     return $mimes;
   }
 
   function bs_debug_print($context, $data = false)
   {
-    return '<pre style="height:200px; overflow:auto; resize:vertical;">' .
+    return '<pre style="height:200px; overflow:auto; resize:vertical; background: #eee; padding: 1.6rem;">' .
       print_r($data ?: $context, true) .
       '</pre>';
   }

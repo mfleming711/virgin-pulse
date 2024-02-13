@@ -1,7 +1,6 @@
 {
     "require": {
-        "timber/timber": "^1.22.1",
-        "algolia/algoliasearch-client-php": "^3.4"
+        "timber/timber": "^2.0"
     },
     "config": {
         "allow-plugins": {

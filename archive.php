@@ -20,67 +20,6 @@ if (is_day()) {
 	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 }
 
-$tax_query = [];
-
-// if (isset($_GET["solutions"])) {
-// 	$tax_query[] = [
-// 		'taxonomy' => 'tx_solution',
-// 		'terms' => explode(',', $_GET["solutions"]),
-// 		'field' => 'slug',
-// 		'operator' => 'IN'
-// 	];
-// }
-
-
 $context['posts'] = new Timber\PostQuery();
-
-// overwrite pagination settings:
-// https://github.com/timber/timber/blob/master/lib/Pagination.php#L107
-$context['posts']['pagination'] = Timber::get_pagination([
-	"start_size" => 1,
-	"mid_size" => 1,
-	"end_size" => 1,
-	"show_all" => true,
-]);
-
-
-// get taxonomy terms
-$hide_empty = false;
-
-$context['categories'] = Timber::get_terms([
-	'taxonomy'   => 'category',
-	'hide_empty' => $hide_empty,
-]);
-
-// for some reason WordPress will return only the first matching category
-// so we read from $_GET directly and only fallback to get_query_var if empty
-$context['current_category'] = explode(',', ($_GET['category_name'] ?? false) ?: get_query_var('category_name'));
-
-
-$context['solutions'] = Timber::get_terms([
-	'taxonomy'   => 'tx_solution',
-	'hide_empty' => $hide_empty,
-]);
-$context['current_solutions'] = explode(',', get_query_var('tx_solution'));
-
-$context['industries'] = Timber::get_terms([
-	'taxonomy'   => 'tx_industry',
-	'hide_empty' => $hide_empty,
-]);
-$context['current_industries'] = explode(',', get_query_var('tx_industry'));
-
-$context['roles'] = Timber::get_terms([
-	'taxonomy'   => 'tx_role',
-	'hide_empty' => $hide_empty,
-]);
-$context['current_roles'] = explode(',', get_query_var('tx_role'));
-
-$context['technologies'] = Timber::get_terms([
-	'taxonomy'   => 'tx_topic',
-	'hide_empty' => $hide_empty,
-]);
-$context['current_technologies'] = explode(',', get_query_var('tx_topic'));
-
 $context['current_order'] = get_query_var('order');
-
 Timber::render('archive.twig', $context);

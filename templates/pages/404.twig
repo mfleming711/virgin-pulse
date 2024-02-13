@@ -7,16 +7,18 @@
     {% block article_content %}
       <section class="article-content">
         <div class="container py-80">
-
           {% include 'text-composition/text-composition.twig' with {
             classes: {
               headline: 'layout-floating-text-with-image-1-1__headline',
               copy: 'type-s-body md:type-m-body',
-              ctaWrapper: 'flex-wrap',
+              ctaWrapper: 'flex-wrap'
             },
             eyebrow: eyebrow,
-            headline: "404 " ~ __('Page not found.', 'pulse_theme'),
-            copy: __('Sorry, we can’t find that page! You can go back to the Homepage or take a look at our solutions.', 'pulse_theme'),
+            headline: '404 ' ~ __('Page not found.', 'pulse_theme'),
+            copy: __(
+              'Sorry, we can’t find that page! You can go back to the Homepage or take a look at our solutions.',
+              'pulse_theme'
+            ),
             buttons: [
               {
                 link: {
@@ -25,14 +27,14 @@
                 },
                 variant: 'secondary'
               },
-              { 
-                link: { 
+              {
+                link: {
                   title: __('Solutions', 'pulse_theme'),
                   url: Post(globals.solutions_page).link
                 },
                 variant: 'secondary'
-              },
-            ],
+              }
+            ]
           } only %}
         </div>
       </section>

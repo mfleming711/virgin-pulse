@@ -24,6 +24,7 @@ body {
   // TODO: adjust scroll padding
   // scroll-padding-top: 15rem;
 
+  > main,
   > article {
     flex-grow: 1;
   }
@@ -34,7 +35,9 @@ html {
 }
 
 body {
+  // TODO: set base typography
   // @apply type-m-body text-primary tracking-normal;
+  font-size: 1.6rem;
 }
 
 // https://alpinejs.dev/directives/cloak
@@ -62,7 +65,11 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-@import "./tools.scss";
+.article-content > :not(.component-block) {
+  // add container styling to other blocks
+  @apply container;
+}
+
 @import "../templates/components/**/*.scss";
 @import "../templates/blocks/**/*.scss";
 @import "../templates/layouts/**/*.scss";

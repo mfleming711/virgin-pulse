@@ -1,0 +1,29 @@
+<div
+  x-data="mediaItemComponent"
+  class="component-media-item {% if theme %}theme-{{theme}}{% endif %}  {{ class }}"
+>
+  {# TODO: Add lottie player (if needed) #}
+  {% if media_item.video.url %}
+    {% include 'video/video.twig' with {
+      video: media_item.video.url,
+      poster: media_item.image.url,
+      autoplay: true,
+    }|merge(video_props ?? {}) only %}
+  {% else %}
+    <img
+      src="{{ media_item.image.url|resize(1280) }}"
+      srcset="
+          {{ media_item.image.url|resize(2560) }} 1280w,
+          {{ media_item.image.url|resize(1920) }} 1280w,
+          {{ media_item.image.url|resize(1280) }} 1280w,
+          {{ media_item.image.url|resize(720) }} 720w
+        "
+      {# TODO: Make sure images are cut to the correct dimensions #}
+      width="{{ media_item.image.width }}"
+      height="{{ media_item.image.height }}"
+      sizes="50%"
+      loading="lazy"
+      alt="{{ media_item.image.alt }}"
+    />
+  {% endif %}
+</div>

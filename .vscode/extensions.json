@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "rexshi.phpdoc-comment-vscode-plugin",
     "adamwalzer.scss-lint",
-    "bradlc.vscode-tailwindcss"
-  ],
+    "bradlc.vscode-tailwindcss",
+    "gruntfuggly.todo-tree"
+  ]
 }
