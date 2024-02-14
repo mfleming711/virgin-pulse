@@ -21,7 +21,9 @@ MKLINK /J "D:\LocalSites\virginpulse\app\public\wp-content\themes\pulse_theme" D
 
 ## Running the Project
 
-Install dev dependencies with `nvm use && yarn`
+Install dev PHP dependencies using [Composer](https://getcomposer.org/download/) with `composer install`
+
+Install dev JS dependencies using yarn with `nvm use && yarn`
 
 A local dev server to build and watch files can be started via: `yarn dev`.
 
