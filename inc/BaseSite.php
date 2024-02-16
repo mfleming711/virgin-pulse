@@ -51,6 +51,9 @@ class Site extends \Timber\Site
     $twig->addFilter(
       new \Twig\TwigFilter('file_type', [$this, 'bs_attachement_file_type'])
     );
+    $twig->addFilter(
+      new \Twig\TwigFilter('time_span', [$this, 'bs_calc_time_span'])
+    );
     return $twig;
   }
 
@@ -127,5 +130,51 @@ class Site extends \Timber\Site
   {
     $file = get_attached_file($_path);
     return pathinfo($file)['extension'];
+  }
+
+  function bs_calc_time_span( $_timestamps )
+  {
+  	$output = '';
+  	$input_times = explode('-', $_timestamps);
+  	$unixtimestamp = strtotime($input_times[0]);
+  	$end_unixtimestamp = strtotime($input_times[1]);
+
+  	$date = new \DateTime();
+  	$date->setTimestamp($unixtimestamp);
+  	$end_date = new \DateTime();
+  	$end_date->setTimestamp($end_unixtimestamp);
+  	$y_diff = ( date('Y', $date->getTimestamp() ) == date('Y', $end_date->getTimestamp() ) );
+  	$m_diff = ( date('n', $date->getTimestamp() ) == date('n', $end_date->getTimestamp() ) );
+  	$d_diff = ( date('d', $date->getTimestamp() ) == date('d', $end_date->getTimestamp() ) );
+  	if ( !!$y_diff && !!$m_diff && !$d_diff) {
+  		$t_day = date_i18n("j", $unixtimestamp) . '–' . date_i18n("j", $end_unixtimestamp) . '';
+  		$t_month = date_i18n("F", $unixtimestamp) . ' ';
+  		$t_year = date_i18n("Y", $unixtimestamp);
+  	} elseif ( !!$y_diff && !$m_diff) {
+  		$t_day = '';
+  		$t_month =
+  			date_i18n("F", $unixtimestamp) . ' '
+  		. date_i18n("j", $unixtimestamp)
+  		. ' – '
+  		. date_i18n("F", $end_unixtimestamp) . ' '
+  		. date_i18n("j", $end_unixtimestamp). ' ';
+  		$t_year = date_i18n("Y", $unixtimestamp);
+  	} elseif ( !$y_diff ) {
+  		$t_day = '';
+  		$t_month = '';
+  		$t_year =
+  			date_i18n("F", $unixtimestamp) . '. '
+  		. date_i18n("j", $unixtimestamp) . ''
+  		. '–'
+  		. date_i18n("F", $end_unixtimestamp) . '. '
+  		. date_i18n("j", $end_unixtimestamp) . ' ';
+  	} else {
+			$t_day = date_i18n("j", $unixtimestamp);
+			$t_month = date_i18n("F", $unixtimestamp) . ' ';
+		}
+  	$output .= '<span class="month">' . $t_month . '</span>';
+  	$output .= '<span class="day">' . $t_day . '</span>';
+  	// $output .= '<span class="year">' . $t_year . '</span>';
+  	return $output;
   }
 }

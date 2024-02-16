@@ -1,0 +1,18 @@
+<div
+  {% if block.anchor %}id="{{block.anchor}}"{% endif %}
+  x-data="ressourceGridBlock"
+  class="component-block block-ressource-grid {{ className }}"
+>
+  <div class="container">
+    {# placeholder content #}
+    <h3>Block: Ressource grid</h3>
+    {{ print(fields) }}
+    {# placeholder content #}
+
+    {% for post in posts  %}
+      {% set post = Post(post) %}
+      POST:
+      {{ print(post) }}
+    {% endfor %}
+  </div>
+</div>
