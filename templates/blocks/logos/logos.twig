@@ -1,0 +1,12 @@
+<div
+  {% if block.anchor %}id="{{block.anchor}}"{% endif %}
+  x-data="logosBlock"
+  class="component-block block-logos {{ className }}"
+>
+  <div class="container">
+    {# placeholder content #}
+    <h3>Block: Logos</h3>
+    {{ print(fields) }}
+    {# placeholder content #}
+  </div>
+</div>
