@@ -1,8 +1,8 @@
 <?php
 // add data to block context
 
-$picked_ids = $context['fields']['picked_posts'];
-$categories = $context['fields']['categories'];
+$picked_ids = $context['fields']['picked_posts'] ?: [];
+$categories = $context['fields']['categories'] ?: [];
 $tax_query = [];
 
 if ($categories && count($categories)) {
