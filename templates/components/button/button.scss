@@ -6,10 +6,14 @@
   padding: 0.5rem 2.5rem;
   color: theme("colors.sea");
   border-radius: 15px;
-
+  display: flex;
+  width: min-content;
+  white-space: nowrap;
+  
   &.icon-only{
     padding: 1rem 0.35rem;
     border-radius: 25px;
+    font-size: 10px;
   }
 
   &.variant {
