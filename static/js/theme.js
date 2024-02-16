@@ -18,6 +18,7 @@ import '../../templates/components/dev-grid/dev-grid.js';
 import '../../templates/components/header/header.js';
 
 // import blocks
+import '../../templates/blocks/ressource-grid/ressource-grid.js'
 import '../../templates/blocks/featured-event/featured-event.js'
 import '../../templates/blocks/logos/logos.js'
 import '../../templates/blocks/components/components.js'
