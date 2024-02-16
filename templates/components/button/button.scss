@@ -1,6 +1,30 @@
 .component-button {
+  border-left: 0.5rem solid;
+  border-right: 0.5rem solid;
+  border-top: 0.2rem solid;
+  border-bottom: 0.2rem solid;
+  padding: 0.5rem 2.5rem;
+  color: theme("colors.sea");
+  border-radius: 15px;
+
+  &.icon-only{
+    padding: 1rem 0.35rem;
+    border-radius: 25px;
+  }
+
   &.variant {
-    &-primary {} 
-    &-secondary {}
+    &-primary {
+      border-color: theme("colors.sea");
+      svg{
+        fill: theme("colors.sea");
+      }
+    }
+    &-secondary {
+      border-color: theme("colors.white");
+      color: theme("colors.white");
+      svg{
+        fill: theme("colors.white");
+      }
+    }
   } 
 }

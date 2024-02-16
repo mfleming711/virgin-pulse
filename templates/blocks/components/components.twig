@@ -11,12 +11,27 @@
 
     <h2 class="mt-40 mb-20">Button component</h2>
     {% include 'button/button.twig' with {
-      link: fields.link
+      link: fields.link,
+      icon: "arrow"
     } only %}
 
     {% include 'button/button.twig' with {
       link: { title: "Click me" },
       attribs: 'onClick="alert(`clicked`)"'
+    } only %}
+
+    <div style="background-color: #003C44; padding: 10px; margin: 10px; ">
+      {% include 'button/button.twig' with {
+      link: { title: "Click me" },
+      attribs: 'onClick="alert(`Secondary`)"',
+      variant: "secondary"
+    } only %}
+      </div>
+
+    {% include 'button/button.twig' with {
+      icon: "arrow",
+      attribs: 'onClick="alert(`Icon only`)"',
+      class: "icon-only"
     } only %}
 
     <h2 class="mt-40 mb-20">Text composition component</h2>
