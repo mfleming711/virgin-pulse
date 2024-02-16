@@ -63,9 +63,7 @@ class Block
       get_template_directory() .
       "/templates/blocks/{$_template}/{$_template}.php";
 
-    if (is_file($_phpfile)) {
-      include $_phpfile;
-    }
+    if (is_file($_phpfile)) include $_phpfile;
 
     \Timber::render(
       ["blocks/{$_template}/{$_template}.twig", 'blocks/default/default.twig'],

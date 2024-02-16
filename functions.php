@@ -88,7 +88,7 @@ class PulseSite extends Base\Site
 
   public function register_post_types()
   {
-    // include_once('inc/posttypes/cpt.php');
+    include_once('inc/posttypes/events.php');
   }
 
   public function register_taxonomies()

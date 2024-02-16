@@ -1,0 +1,29 @@
+{# fall back to upcoming event if none is set in the CMS #}
+{% set event = fields.event[0] ?: next_event ?: null %}
+
+{% if event %}
+  {# expand event id to Event Post object #}
+  {% set event = Post(event) %}
+  <div
+    {% if block.anchor %}id="{{block.anchor}}"{% endif %}
+    x-data="featuredEventBlock"
+    class="component-block block-featured-event {{ className }}"
+  >
+    <div class="container">
+      {# placeholder content #}
+      <h3>Block: Featured event</h3>
+      {{ print(fields) }}
+      {# placeholder content #}
+
+      {# see fields of event (most relevant fields at the end of the output) #}
+      {{ print( event ) }}
+
+      {# format date range if end_date is set in CMS  #}
+      {% if event.end_date %}
+        {{ "#{event.start_date}-#{event.end_date}"|time_span }}
+      {% else %}
+        {{ event.start_date|date('M d') }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
