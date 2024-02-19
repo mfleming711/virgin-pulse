@@ -1,0 +1,11 @@
+<div
+  x-data="expandingCardAnimatedComponent"
+  class="component-expanding-card-animated"
+  style="background-color: {{ background_color }};"
+>
+  <div class="card" style="background-color: {{ card_colour }};">
+    <div class="container content">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
