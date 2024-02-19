@@ -6,8 +6,5 @@
   },
   "emmet.includeLanguages": {
     "twig": "html"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
   }
 }

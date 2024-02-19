@@ -40,7 +40,7 @@
   {% if copyProps.text %}
     {% include 'text-composition/text/text.twig' with {
       type: 'copy',
-      class: [copyProps.class, classes.copy, "copy"]|join(' ')
+      class: [copyProps.class, classes.copy]|join(' ')
     }|merge(copyProps) only %}
   {% endif %}
   </div>
