@@ -1,11 +1,9 @@
-<div x-data="linkCardComponent" class="component-link-card card {{ big ? 'big' : '' }} {{ class }}">
+<div style="background-color: {{bgcolor}};" x-data="linkCardComponent" class="component-link-card card {{ big ? 'big' : '' }} {{ class }}">
 	<a href="/" target="">
 		<div class="header">
-			{% if eyebrow %}
 				<p class="eyebrow">{{eyebrow}}</p>
-			{% else %}
 				<p class="title">{{title}}</p>
-			{% endif %}
+
 			<p class="{{ big ? 'copy-big' : 'copy' }}">{{copy}}</p>
 		</div>
 		<span class="arrow">{% include 'static/img/arrow.svg' %}</span>
