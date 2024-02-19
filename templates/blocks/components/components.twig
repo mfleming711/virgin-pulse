@@ -6,7 +6,7 @@
   <div class="container py-80">
 
     <h2 class="mt-40 mb-20">Link component</h2>
-    {% include 'link/link.twig' with { link: fields.link } only %}
+    {% include 'link/link.twig' with { link: fields.link, icon: "arrow" } only %}
     {% include 'link/link.twig' with { link: { url: 'https://google.com', title: 'Google', target: '_blank'}   } only %}
 
     <h2 class="mt-40 mb-20">Button component</h2>
