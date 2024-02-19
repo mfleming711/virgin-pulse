@@ -29,7 +29,7 @@
     }|merge(eyebrowProps) only %}
   {% endif %}
 
-  <div class="{{ twolines ? 'two-lines' : 'regular' }}">
+  <div class="{{ twoColumns ? 'two-columns' : 'regular' }}">
   {% if headlineProps.text %}
     {% include 'text-composition/text/text.twig' with {
       type: 'headline',

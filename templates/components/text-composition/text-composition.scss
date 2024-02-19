@@ -35,8 +35,10 @@
   @apply flex flex-col gap-20;
 }
 
-.two-lines {
-  @apply flex flex-row gap-150;
-  display: flex;
-  flex-direction: row;
+.two-columns {
+  @screen md{
+    @apply flex flex-row gap-150;
+    display: flex;
+    flex-direction: row;
+  }
 }
