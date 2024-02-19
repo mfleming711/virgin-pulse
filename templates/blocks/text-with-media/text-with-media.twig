@@ -1,0 +1,12 @@
+<div
+  {% if block.anchor %}id="{{block.anchor}}"{% endif %}
+  x-data="textWithMediaBlock"
+  class="component-block block-text-with-media {{ className }}"
+>
+  <div class="container">
+    {# placeholder content #}
+    <h3>Block: Text with media</h3>
+    {{ print(fields) }}
+    {# placeholder content #}
+  </div>
+</div>
