@@ -1,0 +1,14 @@
+<div style="background-color: {{bgcolor}};" x-data="linkCardComponent" class="component-link-card card {{ big ? 'big' : '' }} {{ class }}">
+	<a href="/" target="">
+		<div class="header">
+				<p class="eyebrow">{{eyebrow}}</p>
+				<p class="title">{{title}}</p>
+
+			<p class="{{ big ? 'copy-big' : 'copy' }}">{{copy}}</p>
+		</div>
+		<span class="arrow">{% include 'static/img/arrow.svg' %}</span>
+	</a>
+	<svg class="circle" width="142" height="98" viewbox="0 0 142 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M-42.9945 85C-42.6297 30.0658 -8.03355 -8.70062e-06 49.5041 -1.12157e-05C107.042 -1.37307e-05 142 30.0658 142 85C142 139.934 107.039 170 49.5014 170C-8.0363 170 -43.3593 139.934 -42.9972 85L-42.9945 85Z" fill="#FFCB12"/>
+	</svg>
+</div>

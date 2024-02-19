@@ -1,0 +1,77 @@
+.card {
+    width: 100%;
+    max-width: 70rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 9px;
+    padding: 4rem 4rem 2.4rem 4rem;
+  
+    .arrow {
+      position: relative;
+      fill: theme("colors.black");
+      transition: transform 0.4s ease;
+    }
+    
+    &:hover .arrow {
+      transform: translateX(90%);
+    }
+
+    &.big {
+
+    padding: 6.4rem 5rem 2rem 5rem ;
+
+      .header{
+      margin-bottom: 5.6rem;
+    }
+  }
+    .header {
+    margin-bottom: 4.4rem;
+
+      .title {
+        font-size: 4.2rem;
+        line-height: 3.8rem;
+        font-weight: 500;
+        margin-bottom: 2.4rem;
+        color: theme("colors.charcoal");
+      }
+  
+      .eyebrow {
+        color: theme("colors.sea");
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+      }
+  
+      .copy {
+        colors: theme("colors.charcoal");
+        font-weight: 500;
+        white-space: wrap;
+        font-size: 2.8rem;
+      }
+  
+      .copy-big {
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+    }
+  
+    .circle {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: all 0.35s;
+    }
+  
+    &:hover .circle {
+      width: 200%;
+      height: 250%;
+      transition-duration: 1s;
+    }
+  
+    a {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      position: relative;
+      z-index: 10;
+    }
+  }
