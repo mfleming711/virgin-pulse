@@ -1,26 +1,32 @@
-<div
-  {% if block.anchor %}id="{{block.anchor}}"{% endif %}
-  x-data="componentsBlock"
-  class="component-block block-components {{ className }}"
->
-  <div class="container py-80">
+<div {% if block.anchor %} id="{{block.anchor}}" {% endif %} x-data="componentsBlock" class="component-block block-components {{ className }}">
+	<div class="container py-80">
 
     <h2 class="mt-40 mb-20">Link component</h2>
     {% include 'link/link.twig' with { link: fields.link, icon: "arrow" } only %}
     {% include 'link/link.twig' with { link: { url: 'https://google.com', title: 'Google', target: '_blank'}   } only %}
 
-    <h2 class="mt-40 mb-20">Button component</h2>
-    {% include 'button/button.twig' with {
+		<h2 class="mt-40 mb-20">Button component</h2>
+		{% include 'button/button.twig' with {
       link: fields.link
     } only %}
 
-    {% include 'button/button.twig' with {
+		{% include 'button/button.twig' with {
       link: { title: "Click me" },
       attribs: 'onClick="alert(`clicked`)"'
     } only %}
 
-    <h2 class="mt-40 mb-20">Text composition component</h2>
-    {% include 'text-composition/text-composition.twig' with {
+
+		<h2 class="mt-40 mb-20">link card</h2>
+		<h3 class="mt-40 mb-20">v1</h3>
+
+		{% include 'link-card/link-card.twig' with { eyebrow: "Press", copy: "Donec id elit non mi porta gravida at eget donec id elit non mi porta gravida at eget", url: "", target: "" } %}
+
+		<h3 class="mt-40 mb-20">v2</h3>
+
+		{% include 'link-card/link-card.twig' with { title: "Heading", copy: "Fringilla odio lectus nulla lorem. Quis ac cras vulputate malesuada bibendum pellentesque ullamcorper libero arcu. Mauris pharetra etiam morbi.", url: "", target: "", big: true } %}
+
+		<h2 class="mt-40 mb-20">Text composition component</h2>
+		{% include 'text-composition/text-composition.twig' with {
       eyebrow: 'Eyebrow',
       headline: 'Text Composition',
       copy: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
@@ -28,9 +34,9 @@
       buttons: [{link: fields.link}],
     } only %}
 
-    <h2 class="mt-40 mb-20">Media Item component</h2>
-    {% include 'media-item/media-item.twig' with fields.media_item only %}
-    {% include 'responsive-media-item/responsive-media-item.twig' with fields.responsive only %}
+		<h2 class="mt-40 mb-20">Media Item component</h2>
+		{% include 'media-item/media-item.twig' with fields.media_item only %}
+		{% include 'responsive-media-item/responsive-media-item.twig' with fields.responsive only %}
 
-  </div>
+	</div>
 </div>

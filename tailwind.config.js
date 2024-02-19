@@ -23,7 +23,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       // TODO: add colors
-      sea: "#003C44"
+      sea: "#003C44",
+      charcoal: "#2A2A2A"
     },
     screens: {
       sm: '375px',
