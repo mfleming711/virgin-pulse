@@ -1,0 +1,18 @@
+<div
+  x-data="expandingCardAnimatedComponent"
+  class="component-expanding-card-animated"
+  style="background-color: {{ background_color }};"
+>
+  <div class="component-expanding-card-animated__card" style="background-color: {{ card_colour }};">
+    <div class="container content">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  <svg>
+    <defs>
+      <clipPath class="component-expanding-card-animated__frame" >
+        <rect x="30" y="30" rx="30" ry="30" width="" height=""/>
+      </clipPath>
+    </defs>
+  </svg>
+</div>

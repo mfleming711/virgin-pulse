@@ -1,0 +1,25 @@
+.component-expanding-card-animated {
+  position: relative;
+  &__card {
+    position: relative;
+    clip-path: url(#component-expanding-card-animated__frame);
+  }
+  & > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__frame {
+    transition: transform 0.3s ease;
+    rect {
+      width: calc(100% - 6rem);
+      height: calc(100% - 6rem);
+    }
+  }
+  &.expanded {
+    .component-expanding-card-animated__frame {
+      transform: scale(1.2);
+      transform-origin: center;
+    }
+  }
+}
