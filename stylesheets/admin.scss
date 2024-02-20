@@ -1,9 +1,19 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// .block-editor .editor-styles-wrapper {
-//   @import "normalize";
-//   @import "../templates/components/**/*.scss";
-//   @import "../templates/blocks/**/*.scss";
-// }
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3rem;
+}
+
+.block-editor .editor-styles-wrapper {
+  @import "normalize";
+  @import "fonts";
+  @import "typo";
+  @import "../templates/components/**/*.scss";
+  @import "../templates/blocks/**/*.scss";
+}

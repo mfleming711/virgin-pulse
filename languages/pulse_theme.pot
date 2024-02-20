@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-13 13:02+0000\n"
+"POT-Creation-Date: 2024-02-20 14:17+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -14,6 +14,222 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/posttypes/events.php:4
+msgctxt "Post Type General Name"
+msgid "Events"
+msgstr ""
+
+#: inc/posttypes/events.php:5
+msgctxt "Post Type Singular Name"
+msgid "Event"
+msgstr ""
+
+#: inc/posttypes/events.php:6
+msgid "Events"
+msgstr ""
+
+#: inc/posttypes/events.php:7, inc/posttypes/events.php:34
+msgid "Event"
+msgstr ""
+
+#: inc/posttypes/events.php:8
+msgid "Event Archives"
+msgstr ""
+
+#: inc/posttypes/events.php:9
+msgid "Event Attributes"
+msgstr ""
+
+#: inc/posttypes/events.php:10
+msgid "Parent Event:"
+msgstr ""
+
+#: inc/posttypes/events.php:11
+msgid "All Events"
+msgstr ""
+
+#: inc/posttypes/events.php:12
+msgid "Add New Event"
+msgstr ""
+
+#: inc/posttypes/events.php:13, inc/posttypes/ressources.php:13
+msgid "Add New"
+msgstr ""
+
+#: inc/posttypes/events.php:14
+msgid "New Event"
+msgstr ""
+
+#: inc/posttypes/events.php:15
+msgid "Edit Event"
+msgstr ""
+
+#: inc/posttypes/events.php:16
+msgid "Update Event"
+msgstr ""
+
+#: inc/posttypes/events.php:17
+msgid "View Event"
+msgstr ""
+
+#: inc/posttypes/events.php:18
+msgid "View Events"
+msgstr ""
+
+#: inc/posttypes/events.php:19
+msgid "Search Event"
+msgstr ""
+
+#: inc/posttypes/events.php:20, inc/posttypes/ressources.php:20
+msgid "Not found"
+msgstr ""
+
+#: inc/posttypes/events.php:21, inc/posttypes/ressources.php:21
+msgid "Not found in Trash"
+msgstr ""
+
+#: inc/posttypes/events.php:22
+msgid "Event Image"
+msgstr ""
+
+#: inc/posttypes/events.php:23
+msgid "Set Event image"
+msgstr ""
+
+#: inc/posttypes/events.php:24
+msgid "Remove Event image"
+msgstr ""
+
+#: inc/posttypes/events.php:25
+msgid "Use as Event image"
+msgstr ""
+
+#: inc/posttypes/events.php:26
+msgid "Insert into Event"
+msgstr ""
+
+#: inc/posttypes/events.php:27
+msgid "Uploaded to this Event"
+msgstr ""
+
+#: inc/posttypes/events.php:28
+msgid "Events list"
+msgstr ""
+
+#: inc/posttypes/events.php:29
+msgid "Events list navigation"
+msgstr ""
+
+#: inc/posttypes/events.php:30
+msgid "Filter Events list"
+msgstr ""
+
+#: inc/posttypes/events.php:35
+msgid "Events Description"
+msgstr ""
+
+#: inc/posttypes/ressources.php:4
+msgctxt "Post Type General Name"
+msgid "Ressources"
+msgstr ""
+
+#: inc/posttypes/ressources.php:5
+msgctxt "Post Type Singular Name"
+msgid "Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:6
+msgid "Ressources"
+msgstr ""
+
+#: inc/posttypes/ressources.php:7, inc/posttypes/ressources.php:34
+msgid "Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:8
+msgid "Ressource Archives"
+msgstr ""
+
+#: inc/posttypes/ressources.php:9
+msgid "Ressource Attributes"
+msgstr ""
+
+#: inc/posttypes/ressources.php:10
+msgid "Parent Ressource:"
+msgstr ""
+
+#: inc/posttypes/ressources.php:11
+msgid "All Ressources"
+msgstr ""
+
+#: inc/posttypes/ressources.php:12
+msgid "Add New Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:14
+msgid "New Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:15
+msgid "Edit Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:16
+msgid "Update Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:17
+msgid "View Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:18
+msgid "View Ressources"
+msgstr ""
+
+#: inc/posttypes/ressources.php:19
+msgid "Search Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:22
+msgid "Ressource Image"
+msgstr ""
+
+#: inc/posttypes/ressources.php:23
+msgid "Set Ressource image"
+msgstr ""
+
+#: inc/posttypes/ressources.php:24
+msgid "Remove Ressource image"
+msgstr ""
+
+#: inc/posttypes/ressources.php:25
+msgid "Use as Ressource image"
+msgstr ""
+
+#: inc/posttypes/ressources.php:26
+msgid "Insert into Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:27
+msgid "Uploaded to this Ressource"
+msgstr ""
+
+#: inc/posttypes/ressources.php:28
+msgid "Ressources list"
+msgstr ""
+
+#: inc/posttypes/ressources.php:29
+msgid "Ressources list navigation"
+msgstr ""
+
+#: inc/posttypes/ressources.php:30
+msgid "Filter Ressources list"
+msgstr ""
+
+#: inc/posttypes/ressources.php:35
+msgid "Ressources Description"
+msgstr ""
 
 #: templates/cache/base.php:9
 msgid "No content"

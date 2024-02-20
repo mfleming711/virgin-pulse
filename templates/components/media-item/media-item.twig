@@ -2,10 +2,9 @@
   x-data="mediaItemComponent"
   class="component-media-item {% if theme %}theme-{{theme}}{% endif %}  {{ class }}"
 >
-  {# TODO: Add lottie player (if needed) #}
-  {% if media_item.video.url %}
+  {% if media_item.video_url %}
     {% include 'video/video.twig' with {
-      video: media_item.video.url,
+      video: media_item.video_url,
       poster: media_item.image.url,
       autoplay: true,
     }|merge(video_props ?? {}) only %}
