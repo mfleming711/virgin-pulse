@@ -24,6 +24,7 @@ module.exports = {
       current: 'currentColor',
       // TODO: add colors
       sea: "#003C44",
+      sunset: "#ED5500",
       charcoal: "#2A2A2A"
     },
     screens: {

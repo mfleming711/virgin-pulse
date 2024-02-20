@@ -1,19 +1,22 @@
 {% set eyebrowProps = eyebrow is iterable
   ? eyebrow
   : {
-    text: eyebrow
+    text: eyebrow,
+    class: "type-eyebrow"
   }
 %}
 {% set headlineProps = headline is iterable
   ? headline
   : {
-    text: headline
+    text: headline,
+    class: "type-l-headline component-text-composition__headline"
   }
 %}
 {% set copyProps = copy is iterable
   ? copy
   : {
-    text: copy
+    text: copy,
+    class: "type-m-body component-text-composition__copy"
   }
 %}
 
@@ -21,7 +24,7 @@
 {% set hasButtons = buttons is iterable %}
 {% set hasCTA = hasLinks or hasButtons %}
 
-<div class="component-text-composition {{ classes.root }}">
+<div class="component-text-composition {% if white %}white-variant{% endif %} {{ classes.root }}">
   {% if eyebrowProps.text %}
     {% include 'text-composition/text/text.twig' with {
       type: 'eyebrow',
@@ -29,6 +32,7 @@
     }|merge(eyebrowProps) only %}
   {% endif %}
 
+  <div class="{{ twoColumns ? 'two-columns' : 'regular' }}">
   {% if headlineProps.text %}
     {% include 'text-composition/text/text.twig' with {
       type: 'headline',
@@ -42,6 +46,7 @@
       class: [copyProps.class, classes.copy]|join(' ')
     }|merge(copyProps) only %}
   {% endif %}
+  </div>
 
   {% if hasCTA %}
     <div class="{{ ['flex gap-20 ', classes.ctaWrapper]|join(' ') }}">
