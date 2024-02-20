@@ -1,0 +1,12 @@
+<div
+  {% if block.anchor %}id="{{block.anchor}}"{% endif %}
+  x-data="callToActionBlock"
+  class="component-block block-call-to-action {{ className }}"
+>
+  <div class="container">
+    {# placeholder content #}
+    <h3>Block: Call to action</h3>
+    {{ print(fields) }}
+    {# placeholder content #}
+  </div>
+</div>
