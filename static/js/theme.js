@@ -19,10 +19,19 @@ import '../../templates/components/dev-grid/dev-grid.js';
 import '../../templates/components/header/header.js';
 
 // import blocks
+
 import '../../templates/blocks/ressource-grid/ressource-grid.js';
 import '../../templates/blocks/featured-event/featured-event.js';
 import '../../templates/blocks/logos/logos.js';
 import '../../templates/blocks/components/components.js';
+import '../../templates/blocks/content-blocks-with-icons/content-blocks-with-icons.js'
+import '../../templates/blocks/text-with-media/text-with-media.js'
+import '../../templates/blocks/call-to-action/call-to-action.js'
+import '../../templates/blocks/ressource-grid/ressource-grid.js'
+import '../../templates/blocks/featured-event/featured-event.js'
+import '../../templates/blocks/logos/logos.js'
+import '../../templates/blocks/components/components.js'
+
 
 jQuery(document).ready(function() {
   window.Alpine = Alpine;

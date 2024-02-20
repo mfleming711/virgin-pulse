@@ -15,7 +15,7 @@ var project = {
   twigCache: 'templates/cache',
   jsFiles: ['static/js/theme.js', 'templates/**/*.js'],
   migrationFolder: 'migration/',
-  serverUrl: 'http://virginpulse.local',
+  serverUrl: 'http://localhost:8080', 
   useBrowserSync: true,
   // deploy config
   hostuser: 'root',

@@ -47,26 +47,21 @@
                     "library": "all"
                 },
                 {
-                    "key": "field_659eab09d8cff",
-                    "label": "Video or Lottie File",
-                    "name": "video",
+                    "key": "field_65d3406a88048",
+                    "label": "Video URL",
+                    "name": "video_url",
                     "aria-label": "",
-                    "type": "file",
-                    "instructions": "In one of the following formats: mp4, webm, json",
+                    "type": "url",
+                    "instructions": "Direct link to an mp4 video file. <a href=\"https:\/\/help.vimeo.com\/hc\/en-us\/articles\/12426150952593-Direct-links-to-video-files#h_01FKKQMFZ4YBS1SZPSM9A82VWF\" target=\"_blank\">See here<\/a> for where to find them in Vimeo.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "show_in_graphql": 1,
-                    "uploader": "",
-                    "return_format": "array",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "mp4,webm,json",
-                    "library": "all"
+                    "default_value": "",
+                    "placeholder": "https:\/\/player.vimeo.com\/progressive_redirect\/playback\/xxxxxxxxx\/...."
                 }
             ]
         }
@@ -94,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707816119
+    "modified": 1708344010
 }
