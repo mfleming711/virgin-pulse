@@ -8,12 +8,12 @@ The repo contains all files required for a valid WordPress Theme right in the ro
 
 ```
 # Mac/Ubuntu:
-ln -s /Users/username/projects/pxlp-virgin-pulse /Users/username/LocalSites/virginpulse/app/public/wp-content/themes/pulse_theme
+ln -s /Users/username/projects/virgin-pulse /Users/username/LocalSites/virginpulse/app/public/wp-content/themes/pulse_theme
 ```
 
 ```
 # Windows:
-MKLINK /J "D:\LocalSites\virginpulse\app\public\wp-content\themes\pulse_theme" D:\projects\pxlp-virgin-pulse
+MKLINK /J "D:\LocalSites\virginpulse\app\public\wp-content\themes\pulse_theme" D:\projects\virgin-pulse
 ```
 
 > [!IMPORTANT]
@@ -43,7 +43,3 @@ The following Constants can be set in the `wp-config.php` to allow for different
 # ENV VARS
 define( '<ENV_VAR_NAME>', '<value>' );
 ```
-
-# Implementation Details
-
-TBD
