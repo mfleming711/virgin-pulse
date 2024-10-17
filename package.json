@@ -22,7 +22,7 @@
     "alpinejs": "^3.2.1",
     "browser-sync": "^3.0",
     "css-loader": "^6.8.1",
-    "del": "^6.0.0",
+    "del": "^8.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cache": "^1.1.1",
