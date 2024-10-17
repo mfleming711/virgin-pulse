@@ -42,7 +42,7 @@
     "gulp-sass-glob": "^1.0.9",
     "gulp-wp-pot": "^2.3.5",
     "gulp-zip": "^5.0.2",
-    "plop": "^3.0",
+    "plop": "^4.0",
     "prettier-plugin-twig-melody": "^0.4.6",
     "require-dir": "^1.2.0",
     "style-loader": "^3.3.3",
