@@ -45,7 +45,7 @@
     "plop": "^3.0",
     "prettier-plugin-twig-melody": "^0.4.6",
     "require-dir": "^1.2.0",
-    "style-loader": "^3.3.3",
+    "style-loader": "^4.0.0",
     "webpack": "^5.88.2",
     "webpack-stream": "^7"
   },
